@@ -145,7 +145,7 @@ $(document).on("click", ".Select", function () {
 
     setTimeout(function () {
         (document).getElementById("Logo").innerHTML = "<img src='" + logo + "' alt='logo'>";
-
+        logo = "LOGO";
     }, 900);
 
 
