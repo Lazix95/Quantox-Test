@@ -1,0 +1,76 @@
+
+<!DOCTYPE HTML>
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Quantox test</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/Style.css" rel="stylesheet" type="text/css"/>
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <section class="container">
+
+        <div class="row">
+            <div class="col-md-12" id="Slika"><img src="img/Airplane.jpg" alt="Airplane"/></div>
+            <div id="GeoLocation" class="col-md-12  text-center">
+                <p>Air Traffic List</p>
+                <hr>
+            </div>
+
+            <button class="btn btn-primary col-sm-2 col-sm-offset-3 col-xs-3 col-xs-offset-3 Dugme" onclick="Osvezi()">Osvezi</button>
+            <input class="col-xs-2 Input" type="number" name="KM" placeholder="Unesi kilometrazu" value="200"  id="JS-Range"/>
+            <div class="opis col-xs-2"><p>Domet pretrage u KM</p>
+
+
+            </div>
+        </div>
+        <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header text-center">
+                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        
+                        <h2 class="modal-title" id="Naslov">Company:</h2>
+                       
+                    </div>
+                    <div class="modal-body">
+                        <div class='container-fluid'>
+                            <div class="row text-center"></div>
+                            <div id="Logo" class="col-md-6 col-xs-12 col-md-offset-3"></div>
+                            <hr>
+                            <p id='MestoPolaska'>Mesto polaska:</p>
+                            <p id='Odrediste'>Odrediste:</p>
+                            <p id="ProizvodjacAviona">Proizvodjac:</p>
+                            <p id="ModelAviona">Model:</p>
+
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Zatvori</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="js/Air Traffic.js" type="text/javascript"></script>
+
+    <script src="js/jquery-3.3.1.min.js" type="text/javascript"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

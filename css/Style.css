@@ -1,0 +1,65 @@
+body,html{
+    height: 100%;
+}
+
+#GeoLocation{
+    border: 3px ridge darkred;
+    height: 40%;
+    margin-top: 1%;
+    overflow-y: auto;
+}
+
+.container,.row{height: 100%;}
+
+img{
+    width: 100%;
+}
+
+#Slika{
+    padding: 0;
+}
+
+hr{
+    width: 100%;
+   margin: 0;
+   border-color: black;
+}
+
+.Select{
+   
+   height: 40px;
+    border-bottom: 1px solid grey;
+}
+
+.Select>p{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.avion{
+    transform: rotate(180deg);
+}
+
+.Input{
+    margin-top: 18px;
+    margin-left: 10px;
+}
+.opis{
+    margin-top: 20px;
+}
+.Dugme{
+    margin-top: 15px;
+}
+
+
+
+.Select:hover{
+    background-color: aqua;
+    cursor: pointer;
+    transition: 1s;
+}
+
+@media screen and (max-width: 767px){
+    .Select{
+        height: 90px;
+    }
+}
