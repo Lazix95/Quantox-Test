@@ -24,7 +24,9 @@ function showPosition(position) {
 function ShowData() {
     if (access) {
         km = document.getElementById("JS-Range").value;
-        $.getJSON('http://public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=' + lat + '&lng=' + lng + '&fDstL=0&fDstU=' + km, function (data) {
+        var eee="://";
+        console.log(eee);
+        $.getJSON('https'+eee+'public-api.adsbexchange.com/VirtualRadar/AircraftList.json?lat=' + lat + '&lng=' + lng + '&fDstL=0&fDstU=' + km, function (data) {
             data.acList.sort(function (a, b) {
                 return -(a.GAlt - b.GAlt);
             });
@@ -41,11 +43,12 @@ function ShowData() {
                     "Logo": ""};
                 AirlineList.push(avion);
 
-
+                var Visina_Letenja = item.GAlt / 3.2808;
+                Visina_Letenja = roundToTwo(Visina_Letenja);
                 if (item.Trak <= 180) {
-                    x.innerHTML += '<div class="Select" data-toggle="modal" data-target="#myModal" data-Icao=' + item.Icao + '><p class="col-sm-4">' + Aimg + '</p> <p class="col-sm-4">Visina: ' + item.GAlt + '</p><p class="col-sm-4">Kod leta:' + item.Icao + '</p></div>';
+                    x.innerHTML += '<div class="Select" data-toggle="modal" data-target="#myModal" data-Icao=' + item.Icao + '><p class="col-sm-4">' + Aimg + '</p> <p class="col-sm-4">Visina: ' + Visina_Letenja + ' m</p><p class="col-sm-4">Kod leta:' + item.Icao + '</p></div>';
                 } else {
-                    x.innerHTML += '<div class="Select" data-toggle="modal" data-target="#myModal" data-Icao=' + item.Icao + '><p class="col-sm-4 avion">' + Aimg + '</p> <p class="col-sm-4">Visina: ' + item.GAlt + '</p><p class="col-sm-4">Kod leta:' + item.Icao + '</p></div>';
+                    x.innerHTML += '<div class="Select" data-toggle="modal" data-target="#myModal" data-Icao=' + item.Icao + '><p class="col-sm-4 avion">' + Aimg + '</p> <p class="col-sm-4">Visina: ' + Visina_Letenja + ' m</p><p class="col-sm-4">Kod leta:' + item.Icao + '</p></div>';
                 }
             });
         });
@@ -167,4 +170,6 @@ setInterval(function () {
     Osvezi();
 }, 60 * 1000);
 
-
+function roundToTwo(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
